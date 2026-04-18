@@ -3,49 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Shop - متجر المنطقة السكنية</title>
+    
+    <title>Simple Shop - متجر المنطقة لتبادل السلع والتوصيل السريع</title>
+    <meta name="description" content="متجر Simple Shop لخدمة سكان المنطقة، اطلب الآن واستلم بالسكوتر، أو بادر بتبادل السلع مع جيرانك.">
+    <meta name="keywords" content="متجر, توصيل, سكوتر, تبادل سلع, فودافون كاش, انستا باي, مصر">
+    
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <header>
         <h1>Simple Shop 🏪</h1>
-        <p>كل احتياجاتك من جيرانك في مكان واحد</p>
+        <p>خدمة سريعة.. تبادل ذكي.. توصيل بالسكوتر 🛵</p>
     </header>
 
     <main class="container">
-        <!-- قسم المتاجر -->
         <section class="card" id="market">
             <h2>🛒 المتاجر المحلية</h2>
-            <div id="product-list">
-                <!-- المنتجات ستظهر هنا برمجياً -->
-            </div>
+            <div id="product-list"></div>
         </section>
 
-        <!-- قسم التوصيل -->
         <section class="card" id="delivery">
-            <h2>🛵 حالة التوصيل</h2>
+            <h2>🛵 تتبع طلبك</h2>
             <div id="delivery-status">
-                <p>لا توجد طلبات جارية حالياً.</p>
+                <p>في انتظار طلبك الأول..</p>
             </div>
         </section>
 
-        <!-- بوت التبادل -->
         <section class="card" id="exchange-bot">
-            <h2>🤝 بوت التبادل الأخضر</h2>
+            <h2>🤝 بوت التبادل الذكي</h2>
             <div class="bot-box">
-                <p>أهلاً بك! هل تود تبادل سلعة مع جارك؟</p>
-                <input type="text" id="exchange-input" placeholder="ماذا تريد أن تبدل؟">
-                <button onclick="startExchange()">إرسال للبوت</button>
+                <p>هل لديك شيء تود تبديله مع جارك؟</p>
+                <input type="text" id="exchange-input" placeholder="مثال: أريد تبديل كتاب بمنتج آخر">
+                <button onclick="startExchange()">أرسل للبوت</button>
             </div>
         </section>
     </main>
 
-    <!-- وسائل الدفع -->
     <footer class="payment-methods">
-        <h3>طرق الدفع المدعومة</h3>
+        <h3>طرق الدفع والتحصيل الآمنة</h3>
         <div class="icons">
-            <span>Vodafone Cash</span> | <span>InstaPay</span> | <span>Cash on Delivery</span>
+            <span class="badge">Vodafone Cash</span> 
+            <span class="badge">InstaPay</span> 
+            <span class="badge">Cash on Delivery</span>
         </div>
     </footer>
 
