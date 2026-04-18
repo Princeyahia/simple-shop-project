@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Shop - متجر المنطقة السكنية</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Simple Shop 🏪</h1>
+        <p>كل احتياجاتك من جيرانك في مكان واحد</p>
+    </header>
+
+    <main class="container">
+        <!-- قسم المتاجر -->
+        <section class="card" id="market">
+            <h2>🛒 المتاجر المحلية</h2>
+            <div id="product-list">
+                <!-- المنتجات ستظهر هنا برمجياً -->
+            </div>
+        </section>
+
+        <!-- قسم التوصيل -->
+        <section class="card" id="delivery">
+            <h2>🛵 حالة التوصيل</h2>
+            <div id="delivery-status">
+                <p>لا توجد طلبات جارية حالياً.</p>
+            </div>
+        </section>
+
+        <!-- بوت التبادل -->
+        <section class="card" id="exchange-bot">
+            <h2>🤝 بوت التبادل الأخضر</h2>
+            <div class="bot-box">
+                <p>أهلاً بك! هل تود تبادل سلعة مع جارك؟</p>
+                <input type="text" id="exchange-input" placeholder="ماذا تريد أن تبدل؟">
+                <button onclick="startExchange()">إرسال للبوت</button>
+            </div>
+        </section>
+    </main>
+
+    <!-- وسائل الدفع -->
+    <footer class="payment-methods">
+        <h3>طرق الدفع المدعومة</h3>
+        <div class="icons">
+            <span>Vodafone Cash</span> | <span>InstaPay</span> | <span>Cash on Delivery</span>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
