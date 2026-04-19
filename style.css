@@ -1,54 +1,79 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>Simple Shop - متجر المنطقة لتبادل السلع والتوصيل السريع</title>
-    <meta name="description" content="متجر Simple Shop لخدمة سكان المنطقة، اطلب الآن واستلم بالسكوتر، أو بادر بتبادل السلع مع جيرانك.">
-    <meta name="keywords" content="متجر, توصيل, سكوتر, تبادل سلع, فودافون كاش, انستا باي, مصر">
-    
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+}
 
-    <header>
-        <h1>Simple Shop 🏪</h1>
-        <p>خدمة سريعة.. تبادل ذكي.. توصيل بالسكوتر 🛵</p>
-    </header>
+/* الهيدر */
+.store-header {
+    background-color: #2e7d32; /* الأخضر اللي اخترته */
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+}
 
-    <main class="container">
-        <section class="card" id="market">
-            <h2>🛒 المتاجر المحلية</h2>
-            <div id="product-list"></div>
-        </section>
+/* الفئات */
+.categories {
+    display: flex;
+    gap: 10px;
+    padding: 15px;
+    overflow-x: auto; /* للسحب الجانبي في الموبايل */
+}
 
-        <section class="card" id="delivery">
-            <h2>🛵 تتبع طلبك</h2>
-            <div id="delivery-status">
-                <p>في انتظار طلبك الأول..</p>
-            </div>
-        </section>
+.category {
+    background: white;
+    padding: 8px 20px;
+    border-radius: 20px;
+    border: 1px solid #ddd;
+    white-space: nowrap;
+}
 
-        <section class="card" id="exchange-bot">
-            <h2>🤝 بوت التبادل الذكي</h2>
-            <div class="bot-box">
-                <p>هل لديك شيء تود تبديله مع جارك؟</p>
-                <input type="text" id="exchange-input" placeholder="مثال: أريد تبديل كتاب بمنتج آخر">
-                <button onclick="startExchange()">أرسل للبوت</button>
-            </div>
-        </section>
-    </main>
+.category.active {
+    background: #2e7d32;
+    color: white;
+    border-color: #2e7d32;
+}
 
-    <footer class="payment-methods">
-        <h3>طرق الدفع والتحصيل الآمنة</h3>
-        <div class="icons">
-            <span class="badge">Vodafone Cash</span> 
-            <span class="badge">InstaPay</span> 
-            <span class="badge">Cash on Delivery</span>
-        </div>
-    </footer>
+/* شبكة المنتجات */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* عمودين في الموبايل */
+    gap: 15px;
+    padding: 15px;
+}
 
-    <script src="script.js"></script>
-</body>
-</html>
+.product-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    position: relative;
+}
+
+.product-image {
+    height: 120px;
+    background: #eee; /* مكان الصورة */
+}
+
+.product-info {
+    padding: 10px;
+    text-align: center;
+}
+
+.price {
+    color: #2e7d32;
+    font-weight: bold;
+}
+
+.add-btn {
+    background: #2e7d32;
+    color: white;
+    border: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+}
