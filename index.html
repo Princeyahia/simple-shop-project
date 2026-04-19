@@ -3,52 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>Simple Shop - متجر المنطقة لتبادل السلع والتوصيل السريع</title>
-    <meta name="description" content="متجر Simple Shop لخدمة سكان المنطقة، اطلب الآن واستلم بالسكوتر، أو بادر بتبادل السلع مع جيرانك.">
-    <meta name="keywords" content="متجر, توصيل, سكوتر, تبادل سلع, فودافون كاش, انستا باي, مصر">
-    
+    <title>متجر Simple Shop</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
-    <header>
-        <h1>Simple Shop 🏪</h1>
-        <p>خدمة سريعة.. تبادل ذكي.. توصيل بالسكوتر 🛵</p>
+    <header class="store-header">
+        <button class="icon-btn"><i class="fas fa-arrow-right"></i></button>
+        <h1 class="logo">Simple Shop</h1>
+        <button class="icon-btn"><i class="fas fa-shopping-basket"></i></button>
     </header>
 
-    <main class="container">
-        <section class="card" id="market">
-            <h2>🛒 المتاجر المحلية</h2>
-            <div id="product-list"></div>
-        </section>
+    <div class="categories">
+        <div class="category active">الكل</div>
+        <div class="category">خضروات</div>
+        <div class="category">فواكه</div>
+        <div class="category">منظفات</div>
+    </div>
 
-        <section class="card" id="delivery">
-            <h2>🛵 تتبع طلبك</h2>
-            <div id="delivery-status">
-                <p>في انتظار طلبك الأول..</p>
+    <main class="product-grid">
+        <div class="product-card">
+            <div class="product-image"><img src="item1.jpg" alt="منتج"></div>
+            <div class="product-info">
+                <h3>طماطم طازجة</h3>
+                <p class="price">25 جنيه</p>
+                <button class="add-btn"><i class="fas fa-plus"></i></button>
             </div>
-        </section>
-
-        <section class="card" id="exchange-bot">
-            <h2>🤝 بوت التبادل الذكي</h2>
-            <div class="bot-box">
-                <p>هل لديك شيء تود تبديله مع جارك؟</p>
-                <input type="text" id="exchange-input" placeholder="مثال: أريد تبديل كتاب بمنتج آخر">
-                <button onclick="startExchange()">أرسل للبوت</button>
+        </div>
+        <div class="product-card">
+            <div class="product-image"><img src="item2.jpg" alt="منتج"></div>
+            <div class="product-info">
+                <h3>تفاح أحمر</h3>
+                <p class="price">45 جنيه</p>
+                <button class="add-btn"><i class="fas fa-plus"></i></button>
             </div>
-        </section>
+        </div>
     </main>
 
-    <footer class="payment-methods">
-        <h3>طرق الدفع والتحصيل الآمنة</h3>
-        <div class="icons">
-            <span class="badge">Vodafone Cash</span> 
-            <span class="badge">InstaPay</span> 
-            <span class="badge">Cash on Delivery</span>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
 </body>
 </html>
