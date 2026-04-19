@@ -151,6 +151,32 @@
         </div>
 
     </div>
+<script>
+    let totalItems = 0;
+    let totalPrice = 0;
 
+    // بنجيب كل الزراير اللي فيها علامة الزائد
+    const addButtons = document.querySelectorAll('.add-to-cart');
+    const cartCountElement = document.getElementById('cart-count');
+
+    addButtons.forEach((button, index) => {
+        button.addEventListener('click', () => {
+            // زيادة عدد العناصر في السلة
+            totalItems++;
+            
+            // تحديث الرقم الظاهر فوق أيقونة السلة
+            cartCountElement.innerText = totalItems;
+
+            // تأثير بصري للزرار عند الضغط
+            button.style.background = "#1b5e20";
+            setTimeout(() => {
+                button.style.background = "#2e7d32";
+            }, 200);
+
+            // رسالة بسيطة تظهر للمشتري (اختياري)
+            console.log("تم إضافة المنتج بنجاح! إجمالي العناصر: " + totalItems);
+        });
+    });
+</script>
 </body>
 </html>
