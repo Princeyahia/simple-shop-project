@@ -3,43 +3,149 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>متجر Simple Shop</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Simple Shop Pro</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --main-green: #2e7d32;
+            --soft-bg: #fdfdfd;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
+            margin: 0;
+            padding-bottom: 50px;
+        }
+
+        /* هيدر احترافي */
+        .app-header {
+            background: var(--main-green);
+            color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        /* شريط التصنيفات الأفقي - مريح للمشتري */
+        .categories-nav {
+            display: flex;
+            overflow-x: auto;
+            padding: 15px;
+            gap: 12px;
+            scrollbar-width: none; /* إخفاء شريط التمرير */
+        }
+        .categories-nav::-webkit-scrollbar { display: none; }
+
+        .cat-item {
+            background: white;
+            padding: 8px 20px;
+            border-radius: 25px;
+            white-space: nowrap;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            color: #555;
+            cursor: pointer;
+            transition: 0.3s;
+            border: 1px solid transparent;
+        }
+        .cat-item.active {
+            background: var(--main-green);
+            color: white;
+        }
+
+        /* شبكة المنتجات - تظهر منتجين في كل صف بشكل منظم */
+        .products-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            padding: 15px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 15px;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.03);
+            transition: transform 0.2s;
+        }
+        .product-card:active { transform: scale(0.95); }
+
+        .product-card img {
+            width: 100%;
+            height: 110px;
+            object-fit: contain; /* عشان صورة المنتج تظهر كاملة */
+            margin-bottom: 10px;
+        }
+
+        .product-name { font-size: 0.95rem; font-weight: 600; color: #333; margin: 5px 0; }
+        .product-price { color: var(--main-green); font-weight: bold; font-size: 1rem; }
+
+        .add-to-cart {
+            background: var(--main-green);
+            color: white;
+            border: none;
+            width: 35px;
+            height: 35px;
+            border-radius: 10px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
 
-    <header class="store-header">
-        <button class="icon-btn"><i class="fas fa-arrow-right"></i></button>
-        <h1 class="logo">Simple Shop</h1>
-        <button class="icon-btn"><i class="fas fa-shopping-basket"></i></button>
+    <header class="app-header">
+        <i class="fas fa-bars"></i>
+        <span style="font-size: 1.2rem; font-weight: bold;">Simple Shop</span>
+        <i class="fas fa-shopping-basket"></i>
     </header>
 
-    <div class="categories">
-        <div class="category active">الكل</div>
-        <div class="category">خضروات</div>
-        <div class="category">فواكه</div>
-        <div class="category">منظفات</div>
+    <div class="categories-nav">
+        <div class="cat-item active">الكل</div>
+        <div class="cat-item">خضروات</div>
+        <div class="cat-item">فواكه</div>
+        <div class="cat-item">منظفات</div>
+        <div class="cat-item">لحوم</div>
     </div>
 
-    <main class="product-grid">
+    <div class="products-grid">
+        
         <div class="product-card">
-            <div class="product-image"><img src="item1.jpg" alt="منتج"></div>
-            <div class="product-info">
-                <h3>طماطم طازجة</h3>
-                <p class="price">25 جنيه</p>
-                <button class="add-btn"><i class="fas fa-plus"></i></button>
-            </div>
+            <img src="https://cdn-icons-png.flaticon.com/512/1202/1202125.png" alt="طماطم">
+            <div class="product-name">طماطم بلدي</div>
+            <div class="product-price">25 ج.م</div>
+            <button class="add-to-cart"><i class="fas fa-plus"></i></button>
         </div>
+
         <div class="product-card">
-            <div class="product-image"><img src="item2.jpg" alt="منتج"></div>
-            <div class="product-info">
-                <h3>تفاح أحمر</h3>
-                <p class="price">45 جنيه</p>
-                <button class="add-btn"><i class="fas fa-plus"></i></button>
-            </div>
+            <img src="https://cdn-icons-png.flaticon.com/512/415/415733.png" alt="تفاح">
+            <div class="product-name">تفاح أحمر</div>
+            <div class="product-price">45 ج.م</div>
+            <button class="add-to-cart"><i class="fas fa-plus"></i></button>
         </div>
-    </main>
+
+        <div class="product-card">
+            <img src="https://cdn-icons-png.flaticon.com/512/2311/2311357.png" alt="خيار">
+            <div class="product-name">خيار طازج</div>
+            <div class="product-price">15 ج.م</div>
+            <button class="add-to-cart"><i class="fas fa-plus"></i></button>
+        </div>
+
+        <div class="product-card">
+            <img src="https://cdn-icons-png.flaticon.com/512/2909/2909761.png" alt="منظف">
+            <div class="product-name">منظف أطباق</div>
+            <div class="product-price">30 ج.م</div>
+            <button class="add-to-cart"><i class="fas fa-plus"></i></button>
+        </div>
+
+    </div>
 
 </body>
 </html>
